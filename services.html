@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive financial services including GST registration, company registration, accounting, and taxation services. Expert solutions for your business needs.">
+    <meta name="keywords" content="GST registration, company registration, accounting services, tax services, business compliance, financial services">
+    <meta name="author" content="Integrated Accounting & Taxation Services">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Our Services | Integrated Accounting & Taxation Services">
+    <meta property="og:description" content="Professional financial services including GST registration, company registration, accounting, and taxation services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/services">
+    <title>Our Services | Integrated Accounting & Taxation Services</title>
+    
+    <!-- Schema.org markup for Services -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "name": "GST Registration",
+                "description": "Professional GST registration services for businesses",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Integrated Accounting & Taxation Services"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Company Registration",
+                "description": "Complete company registration services including private and public limited companies",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Integrated Accounting & Taxation Services"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Accounting Services",
+                "description": "Comprehensive accounting services including bookkeeping and financial statements",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Integrated Accounting & Taxation Services"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Taxation Services",
+                "description": "Expert tax filing and advisory services",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Integrated Accounting & Taxation Services"
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Base URL for GitHub Pages -->
+    <base href="./">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Integrated Accounting & Taxation Services Logo - Professional Financial Services" height="40" class="me-2">
+                <div>
+                    <div>IA&TS</div>
+                    <div class="small text-white-50">Registration | Accounting | Tax | Compliances</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="bg-light py-2 mt-5">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Services</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Services Content -->
+    <section class="services-content py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Our Financial Services</h1>
+            <div class="row">
+                <!-- Left Sidebar Menu -->
+                <div class="col-md-3">
+                    <div class="services-sidebar">
+                        <div class="list-group">
+                            <!-- Registration Services -->
+                            <div class="list-group-item">
+                                <a href="#registration" class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#registrationSubmenu">
+                                    <span><i class="fas fa-file-alt me-2"></i>Registration Services</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <div class="collapse show" id="registrationSubmenu">
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><a href="#gst" class="text-decoration-none">GST Registration</a></li>
+                                        <li><a href="#company" class="text-decoration-none">Company Registration</a></li>
+                                        <li><a href="#llp" class="text-decoration-none">LLP Registration</a></li>
+                                        <li><a href="#iec" class="text-decoration-none">Import Export Code</a></li>
+                                        <li><a href="#msme" class="text-decoration-none">MSME Registration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Accounting Services -->
+                            <div class="list-group-item">
+                                <a href="#accounting" class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#accountingSubmenu">
+                                    <span><i class="fas fa-calculator me-2"></i>Accounting Services</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <div class="collapse" id="accountingSubmenu">
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><a href="#bookkeeping" class="text-decoration-none">Bookkeeping</a></li>
+                                        <li><a href="#financial" class="text-decoration-none">Financial Statements</a></li>
+                                        <li><a href="#payroll" class="text-decoration-none">Payroll Management</a></li>
+                                        <li><a href="#reconciliation" class="text-decoration-none">Bank Reconciliation</a></li>
+                                        <li><a href="#tax-planning" class="text-decoration-none">Tax Planning</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Taxation Services -->
+                            <div class="list-group-item">
+                                <a href="#taxation" class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#taxationSubmenu">
+                                    <span><i class="fas fa-file-invoice-dollar me-2"></i>Taxation Services</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <div class="collapse" id="taxationSubmenu">
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><a href="#income-tax" class="text-decoration-none">Income Tax Filing</a></li>
+                                        <li><a href="#gst-returns" class="text-decoration-none">GST Returns</a></li>
+                                        <li><a href="#tax-audit" class="text-decoration-none">Tax Audit</a></li>
+                                        <li><a href="#tax-assessment" class="text-decoration-none">Tax Assessment</a></li>
+                                        <li><a href="#tax-advisory" class="text-decoration-none">Tax Advisory</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Compliance Services -->
+                            <div class="list-group-item">
+                                <a href="#compliance" class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#complianceSubmenu">
+                                    <span><i class="fas fa-clipboard-check me-2"></i>Compliance Services</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <div class="collapse" id="complianceSubmenu">
+                                    <ul class="list-unstyled mb-0 mt-2">
+                                        <li><a href="#pf" class="text-decoration-none">PF Compliance</a></li>
+                                        <li><a href="#pt" class="text-decoration-none">PT Compliance</a></li>
+                                        <li><a href="#esic" class="text-decoration-none">ESIC Compliance</a></li>
+                                        <li><a href="#gst-compliance" class="text-decoration-none">GST Compliance</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content Area -->
+                <div class="col-md-9">
+                    <!-- Registration Services Content -->
+                    <div class="service-item mb-5" id="gst">
+                        <h2 class="mb-4">GST Registration</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Eligibility</h3>
+                                <ul>
+                                    <li>Businesses with annual turnover exceeding ₹40 lakhs (₹10 lakhs for special category states)</li>
+                                    <li>E-commerce operators</li>
+                                    <li>Casual taxable persons</li>
+                                    <li>Non-resident taxable persons</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Documents Required</h3>
+                                <ul>
+                                    <li>PAN Card</li>
+                                    <li>Aadhaar Card</li>
+                                    <li>Business proof documents</li>
+                                    <li>Bank account details</li>
+                                    <li>Digital signature</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3>Registration Steps</h3>
+                            <ol>
+                                <li>Visit the GST portal</li>
+                                <li>Fill Part A of the registration form</li>
+                                <li>Submit required documents</li>
+                                <li>Complete Part B of the registration</li>
+                                <li>Submit the application</li>
+                                <li>Receive GSTIN after verification</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Company Registration -->
+                    <div class="service-item mb-5" id="company">
+                        <h2 class="mb-4">Company Registration</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Eligibility</h3>
+                                <ul>
+                                    <li>Minimum 2 directors for private limited company</li>
+                                    <li>Minimum 7 directors for public limited company</li>
+                                    <li>Valid address proof</li>
+                                    <li>Minimum capital requirement as per company type</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Documents Required</h3>
+                                <ul>
+                                    <li>Director's PAN and Aadhaar</li>
+                                    <li>Address proof of directors</li>
+                                    <li>Registered office proof</li>
+                                    <li>Memorandum of Association</li>
+                                    <li>Articles of Association</li>
+                                    <li>Digital signature certificates</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3>Registration Steps</h3>
+                            <ol>
+                                <li>Obtain Digital Signature Certificate</li>
+                                <li>Apply for Director Identification Number</li>
+                                <li>Name approval application</li>
+                                <li>File incorporation documents</li>
+                                <li>Obtain Certificate of Incorporation</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- LLP Registration -->
+                    <div class="service-item mb-5" id="llp">
+                        <h2 class="mb-4">LLP Registration</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Eligibility</h3>
+                                <ul>
+                                    <li>Minimum 2 designated partners</li>
+                                    <li>At least one partner must be resident in India</li>
+                                    <li>Valid business address</li>
+                                    <li>No minimum capital requirement</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Documents Required</h3>
+                                <ul>
+                                    <li>Partner's PAN and Aadhaar</li>
+                                    <li>Address proof of partners</li>
+                                    <li>Registered office proof</li>
+                                    <li>LLP Agreement</li>
+                                    <li>Digital signature certificates</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3>Registration Steps</h3>
+                            <ol>
+                                <li>Obtain Digital Signature Certificate</li>
+                                <li>Apply for Designated Partner Identification Number</li>
+                                <li>Name approval application</li>
+                                <li>File incorporation documents</li>
+                                <li>Obtain Certificate of Incorporation</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Import Export Code -->
+                    <div class="service-item mb-5" id="iec">
+                        <h2 class="mb-4">Import Export Code Registration</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Eligibility</h3>
+                                <ul>
+                                    <li>Any person/entity engaged in import/export</li>
+                                    <li>Valid PAN Card</li>
+                                    <li>Valid business address</li>
+                                    <li>Bank account details</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Documents Required</h3>
+                                <ul>
+                                    <li>PAN Card</li>
+                                    <li>Aadhaar Card</li>
+                                    <li>Address proof</li>
+                                    <li>Bank account details</li>
+                                    <li>Digital signature</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3>Registration Steps</h3>
+                            <ol>
+                                <li>Visit DGFT website</li>
+                                <li>Fill the application form</li>
+                                <li>Upload required documents</li>
+                                <li>Pay application fee</li>
+                                <li>Submit application</li>
+                                <li>Receive IEC code after verification</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- MSME Registration -->
+                    <div class="service-item mb-5" id="msme">
+                        <h2 class="mb-4">MSME Registration</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Eligibility</h3>
+                                <ul>
+                                    <li>Micro Enterprises: Investment up to ₹1 crore and turnover up to ₹5 crore</li>
+                                    <li>Small Enterprises: Investment up to ₹10 crore and turnover up to ₹50 crore</li>
+                                    <li>Medium Enterprises: Investment up to ₹50 crore and turnover up to ₹250 crore</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Documents Required</h3>
+                                <ul>
+                                    <li>Aadhaar Card</li>
+                                    <li>PAN Card</li>
+                                    <li>Business address proof</li>
+                                    <li>Bank account details</li>
+                                    <li>Business classification details</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3>Registration Steps</h3>
+                            <ol>
+                                <li>Visit Udyam Registration portal</li>
+                                <li>Fill the registration form</li>
+                                <li>Enter business details</li>
+                                <li>Submit required documents</li>
+                                <li>Receive Udyam Registration Number</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Bookkeeping Services -->
+                    <div class="service-item mb-5" id="bookkeeping">
+                        <h2 class="mb-4">Bookkeeping Services</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Daily transaction recording</li>
+                                    <li>Ledger maintenance</li>
+                                    <li>Bank reconciliation</li>
+                                    <li>Financial statement preparation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Accurate financial records</li>
+                                    <li>Better decision making</li>
+                                    <li>Tax compliance</li>
+                                    <li>Business growth tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Statements -->
+                    <div class="service-item mb-5" id="financial">
+                        <h2 class="mb-4">Financial Statements</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Personal tax filing</li>
+                                    <li>Business tax filing</li>
+                                    <li>Tax planning</li>
+                                    <li>Tax audit</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Compliance with tax laws</li>
+                                    <li>Tax optimization</li>
+                                    <li>Avoid penalties</li>
+                                    <li>Professional guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payroll Management -->
+                    <div class="service-item mb-5" id="payroll">
+                        <h2 class="mb-4">Payroll Management</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Monthly returns filing</li>
+                                    <li>Employee records maintenance</li>
+                                    <li>Compliance reporting</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Legal compliance</li>
+                                    <li>Employee satisfaction</li>
+                                    <li>Risk management</li>
+                                    <li>Professional handling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bank Reconciliation -->
+                    <div class="service-item mb-5" id="reconciliation">
+                        <h2 class="mb-4">Bank Reconciliation</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Daily transaction recording</li>
+                                    <li>Ledger maintenance</li>
+                                    <li>Bank reconciliation</li>
+                                    <li>Financial statement preparation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Accurate financial records</li>
+                                    <li>Better decision making</li>
+                                    <li>Tax compliance</li>
+                                    <li>Business growth tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Planning -->
+                    <div class="service-item mb-5" id="tax-planning">
+                        <h2 class="mb-4">Tax Planning</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Tax planning</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Tax optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Income Tax Filing -->
+                    <div class="service-item mb-5" id="income-tax">
+                        <h2 class="mb-4">Income Tax Filing</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Personal tax filing</li>
+                                    <li>Business tax filing</li>
+                                    <li>Tax planning</li>
+                                    <li>Tax audit</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Compliance with tax laws</li>
+                                    <li>Tax optimization</li>
+                                    <li>Avoid penalties</li>
+                                    <li>Professional guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GST Returns -->
+                    <div class="service-item mb-5" id="gst-returns">
+                        <h2 class="mb-4">GST Returns</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>GST Returns</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Tax compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Audit -->
+                    <div class="service-item mb-5" id="tax-audit">
+                        <h2 class="mb-4">Tax Audit</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Tax audit</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Tax compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Assessment -->
+                    <div class="service-item mb-5" id="tax-assessment">
+                        <h2 class="mb-4">Tax Assessment</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Tax assessment</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Tax compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Advisory -->
+                    <div class="service-item mb-5" id="tax-advisory">
+                        <h2 class="mb-4">Tax Advisory</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>Tax advisory</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Professional guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PF Compliance -->
+                    <div class="service-item mb-5" id="pf">
+                        <h2 class="mb-4">PF Compliance</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>PF registration</li>
+                                    <li>Monthly returns filing</li>
+                                    <li>Employee records maintenance</li>
+                                    <li>Compliance reporting</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Legal compliance</li>
+                                    <li>Employee satisfaction</li>
+                                    <li>Risk management</li>
+                                    <li>Professional handling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PT Compliance -->
+                    <div class="service-item mb-5" id="pt">
+                        <h2 class="mb-4">PT Compliance</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>PT compliance</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Legal compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ESIC Compliance -->
+                    <div class="service-item mb-5" id="esic">
+                        <h2 class="mb-4">ESIC Compliance</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>ESIC compliance</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Legal compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GST Compliance -->
+                    <div class="service-item mb-5" id="gst-compliance">
+                        <h2 class="mb-4">GST Compliance</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Our Services</h3>
+                                <ul>
+                                    <li>GST compliance</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Benefits</h3>
+                                <ul>
+                                    <li>Legal compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-2">&copy; 2024 Integrated Accounting & Taxation Services. All rights reserved.</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-2"></i>Email: ca.abdulkhaliq@gmail.com</p>
+                    <p class="mb-0"><i class="fas fa-phone me-2"></i>Phone: 81477 17003</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-2">Your Trusted Partner in Financial Services</p>
+                    <p class="mb-0">
+                        <a href="terms.html" class="text-white text-decoration-none me-3">Terms & Conditions</a>
+                        <a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
