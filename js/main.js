@@ -6,7 +6,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         // Check if the link is to a section on the home page
         if (href.startsWith('index.html#')) {
-            // Navigate to home page with the section ID
             window.location.href = href;
             return;
         }
@@ -14,16 +13,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         // Handle same-page navigation
         const target = document.querySelector(href);
         if (target) {
-            // Get navbar height
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            
-            // Get the target's position
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
             const targetPosition = target.getBoundingClientRect().top;
+            const scrollPosition = window.pageYOffset + targetPosition - navbarHeight - 20;
             
-            // Calculate the scroll position accounting for navbar
-            const scrollPosition = window.pageYOffset + targetPosition - navbarHeight - 20; // 20px extra padding
-            
-            // Smooth scroll to the calculated position
             window.scrollTo({
                 top: scrollPosition,
                 behavior: 'smooth'
@@ -32,55 +25,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
+// Form submission handling with debounce
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    let isSubmitting = false;
+    
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
+        if (isSubmitting) return;
+        isSubmitting = true;
+        
+        try {
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData.entries());
+            
+            // Here you would typically send the form data to a server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        } finally {
+            isSubmitting = false;
+        }
     });
 }
 
-// Add fade-in animation to sections when they come into view
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
+// Optimized intersection observer for fade-in animations
+const fadeInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
+            fadeInObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.1 });
 
 // Observe all sections
 document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
+    fadeInObserver.observe(section);
 });
 
-// Navbar background change on scroll
+// Debounced navbar background change on scroll
+let scrollTimeout;
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-    } else {
-        navbar.classList.remove('navbar-scrolled');
+    if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
     }
+    
+    scrollTimeout = window.requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+            navbar?.classList.add('navbar-scrolled');
+        } else {
+            navbar?.classList.remove('navbar-scrolled');
+        }
+    });
 });
 
 // Mobile menu close on link click
@@ -96,20 +95,17 @@ navLinks.forEach(link => {
     });
 });
 
+// Services page functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all service items
     const serviceItems = document.querySelectorAll('.service-item');
-    
-    // Get all submenu links
     const submenuLinks = document.querySelectorAll('.services-sidebar .list-group-item ul li a');
-    
-    // Get all menu sections
     const menuSections = document.querySelectorAll('.services-sidebar .list-group-item');
+    
+    if (!serviceItems.length || !submenuLinks.length || !menuSections.length) return;
     
     // Function to collapse other menus when one is expanded
     function collapseOtherMenus(currentMenu) {
-        const allMenus = document.querySelectorAll('.services-sidebar .collapse');
-        allMenus.forEach(menu => {
+        document.querySelectorAll('.services-sidebar .collapse').forEach(menu => {
             if (menu !== currentMenu && menu.classList.contains('show')) {
                 menu.classList.remove('show');
             }
@@ -119,34 +115,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to menu headers
     menuSections.forEach(section => {
         const menuHeader = section.querySelector('a[data-bs-toggle="collapse"]');
-        menuHeader.addEventListener('click', function(e) {
+        menuHeader?.addEventListener('click', function(e) {
             const targetMenu = document.querySelector(this.getAttribute('data-bs-target'));
-            collapseOtherMenus(targetMenu);
+            if (targetMenu) {
+                collapseOtherMenus(targetMenu);
+            }
         });
     });
     
     // Function to show service card and scroll to top
     function showServiceCard(serviceId) {
-        // Hide all service cards
         document.querySelectorAll('.service-item').forEach(card => {
             card.classList.remove('active');
         });
 
-        // Show the selected service card
         const selectedCard = document.getElementById(serviceId);
         if (selectedCard) {
             selectedCard.classList.add('active');
             
-            // Get navbar height
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            
-            // Get the card's position
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
             const cardPosition = selectedCard.getBoundingClientRect().top;
+            const scrollPosition = window.pageYOffset + cardPosition - navbarHeight - 20;
             
-            // Calculate the scroll position accounting for navbar
-            const scrollPosition = window.pageYOffset + cardPosition - navbarHeight - 20; // 20px extra padding
-            
-            // Smooth scroll to the calculated position
             window.scrollTo({
                 top: scrollPosition,
                 behavior: 'smooth'
@@ -164,26 +154,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Show first service card by default
-    if (serviceItems.length > 0) {
-        showServiceCard(serviceItems[0].id);
-    }
+    showServiceCard(serviceItems[0].id);
 
-    // Check if there's a hash in the URL
+    // Handle hash in URL
     if (window.location.hash) {
-        // Wait for the page to load completely
-        setTimeout(function() {
+        setTimeout(() => {
             const target = document.querySelector(window.location.hash);
             if (target) {
-                // Get navbar height
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                
-                // Get the target's position
+                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top;
+                const scrollPosition = window.pageYOffset + targetPosition - navbarHeight - 20;
                 
-                // Calculate the scroll position accounting for navbar
-                const scrollPosition = window.pageYOffset + targetPosition - navbarHeight - 20; // 20px extra padding
-                
-                // Smooth scroll to the calculated position
                 window.scrollTo({
                     top: scrollPosition,
                     behavior: 'smooth'

@@ -15,151 +15,119 @@
     <meta name="geo.position" content="17.344228678182745;76.84282176496315">
     <meta name="ICBM" content="17.344228678182745, 76.84282176496315">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://muhammadabdulkhaliq1002.github.io/IA-TS/">
-    <meta property="og:title" content="IA&TS - Professional Accounting & Tax Services in Kalaburagi">
-    <meta property="og:description" content="Expert accounting, tax filing, GST registration, and business consulting services in Kalaburagi, Karnataka. Trusted by businesses for financial solutions.">
-    <meta property="og:image" content="https://muhammadabdulkhaliq1002.github.io/IA-TS/images/logo.png">
-    <meta property="og:site_name" content="IA&TS - Income Accounting & Tax Services">
-    <meta property="og:locale" content="en_IN">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/critical.css" as="style">
+    <link rel="preload" href="images/logo.png" as="image">
     
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@your-twitter-handle">
-    <meta name="twitter:creator" content="@your-twitter-handle">
-    <meta name="twitter:title" content="IA&TS - Professional Accounting & Tax Services in Kalaburagi">
-    <meta name="twitter:description" content="Expert accounting, tax filing, GST registration, and business consulting services in Kalaburagi, Karnataka. Trusted by businesses for financial solutions.">
-    <meta name="twitter:image" content="https://muhammadabdulkhaliq1002.github.io/IA-TS/images/logo.png">
+    <!-- Inline critical CSS -->
+    <style>
+        /* Critical CSS for initial render */
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #0dcaf0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            padding-top: 76px;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.9), rgba(13, 110, 253, 0.9)),
+                        url('../images/hero-bg.jpg') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="css/critical.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://muhammadabdulkhaliq1002.github.io/IA-TS/">
-    
-    <!-- Alternate Language Versions -->
-    <link rel="alternate" hreflang="en-IN" href="https://muhammadabdulkhaliq1002.github.io/IA-TS/">
-    <link rel="alternate" hreflang="x-default" href="https://muhammadabdulkhaliq1002.github.io/IA-TS/">
-    
-    <!-- Preconnect to Google Fonts -->
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+        <link rel="stylesheet" href="css/critical.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </noscript>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Google AdSense -->
-    <meta name="google-adsense-account" content="ca-pub-4182780996532855">
+    <!-- Load only required Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css" media="print" onload="this.media='all'">
     
-    <!-- Schema.org markup for Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "IA&TS - Income Accounting & Tax Services",
-        "url": "https://muhammadabdulkhaliq1002.github.io/IA-TS/",
-        "logo": "https://muhammadabdulkhaliq1002.github.io/IA-TS/images/logo.png",
-        "sameAs": [
-            "https://www.facebook.com/your-facebook-page",
-            "https://www.linkedin.com/company/your-linkedin-page",
-            "https://twitter.com/your-twitter-handle"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "H No 6, 261, Khari Bawli, Khonialawa, Mominpura",
-            "addressLocality": "Kalaburagi",
-            "addressRegion": "Karnataka",
-            "postalCode": "585104",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "17.344228678182745",
-            "longitude": "76.84282176496315"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-1234567890",
-            "contactType": "customer service",
-            "areaServed": "IN",
-            "availableLanguage": ["English", "Hindi", "Kannada"]
-        },
-        "priceRange": "₹₹",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-            }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "GST Registration",
-                        "description": "Complete assistance with GST registration process"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Tax Filing",
-                        "description": "Professional tax filing services for individuals and businesses"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Company Registration",
-                        "description": "End-to-end company registration services"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-            "@type": "Question",
-            "name": "What services do you offer?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We offer comprehensive financial services including GST registration, company registration, accounting services, tax filing, and compliance services. Our services cover all aspects of business registration, accounting, taxation, and regulatory compliance."
-            }
-        }, {
-            "@type": "Question",
-            "name": "How can I get started with your services?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can get started by contacting us through our website, phone, or email. We'll schedule a consultation to understand your needs and provide tailored solutions for your business."
-            }
-        }, {
-            "@type": "Question",
-            "name": "What are your business hours?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We are open Monday through Saturday from 9:00 AM to 6:00 PM. We also offer emergency support for urgent matters outside these hours."
-            }
-        }]
-    }
-    </script>
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/regular.min.css">
+    </noscript>
     
-    <title>Integrated Accounting & Taxation Services | Professional Financial Services</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/style.css">
     <!-- Base URL for GitHub Pages -->
     <base href="./">
+    
+    <title>Integrated Accounting & Taxation Services | Professional Financial Services</title>
 </head>
 <body>
     <!-- Navigation -->
@@ -511,13 +479,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/main.js"></script>
-    <!-- Reviews JS -->
-    <script src="js/reviews.js"></script>
-    <!-- Analytics -->
-    <script src="js/analytics.js"></script>
+    <!-- Scripts -->
+    <script src="js/loadCSS.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/testimonials.js" defer></script>
+    <script src="js/analytics.js" defer></script>
 </body>
 </html> 
