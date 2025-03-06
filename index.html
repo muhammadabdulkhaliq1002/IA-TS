@@ -25,7 +25,8 @@
     <link rel="preload" href="css/critical.css" as="style">
     <link rel="preload" href="css/bootstrap-custom.css" as="style">
     <link rel="preload" href="css/fontawesome-custom.css" as="style">
-    <link rel="preload" href="images/logo.png" as="image">
+    <link rel="preload" href="https://via.placeholder.com/1920x1080.png?text=Hero+Background" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@700&display=swap" as="font" crossorigin>
     
     <!-- Inline critical CSS -->
     <style>
@@ -41,11 +42,54 @@
             --dark-color: #212529;
         }
 
+        /* Optimize main heading for LCP */
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-display: swap;
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: var(--primary-color);
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            z-index: 1;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Rest of your critical CSS */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
             padding-top: 76px;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         .navbar {
@@ -63,22 +107,6 @@
             color: rgba(255, 255, 255, 0.9) !important;
             padding: 0.5rem 1rem;
             transition: color 0.3s ease;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(13, 110, 253, 0.9), rgba(13, 110, 253, 0.9)),
-                        url('../images/hero-bg.jpg') center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
         }
 
         .btn-primary {
@@ -114,34 +142,48 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="images/logo.png" alt="Integrated Accounting & Taxation Services Logo - Professional Financial Services" height="40" class="me-2" loading="eager">
-                <div>
-                    <div>IA&TS</div>
-                    <div class="small text-white-50">Registration | Accounting | Tax | Compliances</div>
+            <a class="navbar-brand d-flex align-items-center" href="#" aria-label="IA&TS Home">
+                <div class="d-flex align-items-center">
+                    <img src="https://via.placeholder.com/40x40.png?text=IA%26TS" 
+                         alt="Integrated Accounting & Taxation Services Logo" 
+                         height="40" 
+                         width="40"
+                         class="me-2" 
+                         loading="eager">
+                    <div class="brand-content">
+                        <div class="brand-text">IA&TS</div>
+                        <div class="brand-subtitle">Registration | Accounting | Tax | Compliances</div>
+                    </div>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav"
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Toggle navigation menu</span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                <ul class="navbar-nav ms-auto" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link d-flex align-items-center justify-content-center" href="#home" role="menuitem" aria-current="page">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link d-flex align-items-center justify-content-center" href="services.html" role="menuitem">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link d-flex align-items-center justify-content-center" href="blog.html" role="menuitem">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link d-flex align-items-center justify-content-center" href="#about" role="menuitem">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <li class="nav-item" role="none">
+                        <a class="nav-link d-flex align-items-center justify-content-center" href="#contact" role="menuitem">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -176,13 +218,27 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
-                    <h1>Integrated Accounting & Taxation Services</h1>
+                    <h1 id="main-heading" class="main-heading">
+                        Integrated Accounting &amp; Taxation Services
+                    </h1>
                     <p class="lead">Your Trusted Partner in Financial Excellence</p>
                     <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Preload LCP content -->
+    <script>
+        // Optimize LCP
+        document.addEventListener('DOMContentLoaded', function() {
+            const heading = document.getElementById('main-heading');
+            if (heading) {
+                heading.style.opacity = '1';
+                heading.style.transform = 'translateZ(0)';
+            }
+        });
+    </script>
 
     <!-- Services Section -->
     <section id="services" class="services-section py-5">
@@ -263,7 +319,7 @@
                     <p>Our commitment to excellence and attention to detail ensures that our clients receive the highest quality service in all aspects of their financial needs.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="images/about.jpg" alt="Muhammad Abdul Khaliq - Professional Accountant and Tax Expert" class="img-fluid rounded" loading="lazy">
+                    <img src="https://via.placeholder.com/600x400.png?text=About+Us" alt="Muhammad Abdul Khaliq - Professional Accountant and Tax Expert" class="img-fluid rounded" loading="lazy">
                 </div>
             </div>
         </div>
@@ -417,28 +473,65 @@
             <!-- Google Maps Embed -->
             <div class="row mt-5">
                 <div class="col-12">
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.002137569517!2d76.84063307500001!3d17.344228679999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc8d3c0c0c0c0c0%3A0x0!2zMTfCsDIwJzM5LjIiTiA3NsKwNTAnMzQuMiJF!5e0!3m2!1sen!2sin!4v1647840000000!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="rounded shadow">
-                        </iframe>
+                    <div id="map-container" class="map-container" aria-label="Office Location Map">
+                        <div id="map-placeholder" class="map-placeholder d-flex align-items-center justify-content-center bg-light rounded" style="height: 450px;">
+                            <button id="load-map" class="btn btn-primary" aria-label="Load office location map">
+                                <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Load Map
+                            </button>
+                        </div>
+                        <div id="map-frame" class="d-none">
+                            <iframe 
+                                id="google-map"
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="rounded shadow"
+                                title="IA&TS Office Location Map - H No 6, 261, Khari Bawli, Khonialawa, Mominpura, Kalaburagi"
+                                aria-label="Interactive map showing IA&TS office location in Kalaburagi">
+                            </iframe>
+                        </div>
                     </div>
                     <div class="text-center mt-3">
                         <a href="https://www.google.com/maps/dir/?api=1&destination=17.344228678182745,76.84282176496315" 
                            class="btn btn-primary" 
                            target="_blank" 
-                           rel="noopener noreferrer">
-                            <i class="fas fa-directions me-2"></i>Get Directions
+                           rel="noopener noreferrer"
+                           aria-label="Get directions to our office">
+                            <i class="fas fa-directions me-2" aria-hidden="true"></i>Get Directions
                         </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Add map loading script -->
+            <script>
+                document.getElementById('load-map').addEventListener('click', function() {
+                    const mapFrame = document.getElementById('map-frame');
+                    const mapPlaceholder = document.getElementById('map-placeholder');
+                    const googleMap = document.getElementById('google-map');
+                    
+                    // Set the map source and ensure accessibility attributes are set
+                    googleMap.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.002137569517!2d76.84063307500001!3d17.344228679999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc8d3c0c0c0c0c0%3A0x0!2zMTfCsDIwJzM5LjIiTiA3NsKwNTAnMzQuMiJF!5e0!3m2!1sen!2sin!4v1647840000000!5m2!1sen!2sin";
+                    googleMap.setAttribute('title', 'IA&TS Office Location Map - H No 6, 261, Khari Bawli, Khonialawa, Mominpura, Kalaburagi');
+                    
+                    // Show map and hide placeholder
+                    mapFrame.classList.remove('d-none');
+                    mapPlaceholder.classList.add('d-none');
+                    
+                    // Announce to screen readers that the map has loaded
+                    const announcement = document.createElement('div');
+                    announcement.setAttribute('role', 'status');
+                    announcement.setAttribute('aria-live', 'polite');
+                    announcement.className = 'visually-hidden';
+                    announcement.textContent = 'Map has loaded successfully';
+                    document.body.appendChild(announcement);
+                    
+                    // Remove announcement after it's been read
+                    setTimeout(() => announcement.remove(), 1000);
+                });
+            </script>
         </div>
     </section>
 
@@ -465,7 +558,11 @@
     <!-- Scripts -->
     <script src="js/loadCSS.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" defer></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
     <script src="js/main.js" defer></script>
     <script src="js/testimonials.js" defer></script>
     <script src="js/analytics.js" defer></script>
