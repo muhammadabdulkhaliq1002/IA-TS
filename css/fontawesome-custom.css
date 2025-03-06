@@ -1,25 +1,37 @@
-/* Custom Font Awesome CSS - Only includes icons we use */
+/* Font Awesome Custom Subset */
 @font-face {
-    font-family: "Font Awesome 6 Free";
+    font-family: 'Font Awesome 6 Free';
     font-style: normal;
     font-weight: 900;
-    font-display: block;
-    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format("woff2");
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
 
+/* Base icon styles */
 .fa,
 .fas {
-    font-family: "Font Awesome 6 Free" !important;
-    font-weight: 900 !important;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
 }
 
-/* Icons we use */
+/* Icon definitions */
 .fa-check:before {
     content: "\f00c";
 }
 
 .fa-times:before {
     content: "\f00d";
+}
+
+.fa-star:before {
+    content: "\f005";
 }
 
 .fa-envelope:before {
@@ -34,10 +46,6 @@
     content: "\f3c5";
 }
 
-.fa-star:before {
-    content: "\f005";
-}
-
 .fa-directions:before {
     content: "\f5eb";
 }
@@ -46,35 +54,19 @@
     content: "\f0c9";
 }
 
-/* Basic icon styles */
-.fa {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.fa, .fas {
-    font-weight: 900 !important;
-}
-
-/* Icon colors */
+/* Utility classes */
 .text-success {
-    color: var(--bs-success) !important;
+    color: var(--success-color) !important;
 }
 
 .text-danger {
-    color: var(--bs-danger) !important;
+    color: var(--danger-color) !important;
 }
 
 .text-white {
     color: #fff !important;
 }
 
-/* Icon spacing */
 .me-2 {
     margin-right: 0.5rem !important;
 }
