@@ -436,4 +436,93 @@ footer p {
     .map-container iframe {
         height: 300px;
     }
+}
+
+/* Testimonials Section */
+.testimonials-section .card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonials-section .card-body {
+    padding: 2rem;
+}
+
+.testimonials-section .card-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonials-section img {
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+/* Service Comparison Section */
+.comparison-section .table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-section .table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.comparison-section .table td {
+    vertical-align: middle;
+}
+
+.comparison-section .fa-check {
+    font-size: 1.2rem;
+}
+
+.comparison-section .fa-times {
+    font-size: 1.2rem;
+}
+
+/* FAQ Section */
+.faq-section .accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section .accordion-button {
+    font-weight: 600;
+    padding: 1.25rem;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.faq-section .accordion-button:focus {
+    box-shadow: none;
+}
+
+.faq-section .accordion-body {
+    padding: 1.25rem;
+    background-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .testimonials-section .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .comparison-section .table {
+        font-size: 0.9rem;
+    }
+    
+    .faq-section .accordion-button {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
 } 
