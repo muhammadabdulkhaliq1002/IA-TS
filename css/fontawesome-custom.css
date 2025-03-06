@@ -1,0 +1,84 @@
+/* Custom Font Awesome CSS - Only includes icons we use */
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format("woff2");
+}
+
+.fa,
+.fas {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* Icons we use */
+.fa-check:before {
+    content: "\f00c";
+}
+
+.fa-times:before {
+    content: "\f00d";
+}
+
+.fa-envelope:before {
+    content: "\f0e0";
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5";
+}
+
+.fa-star:before {
+    content: "\f005";
+}
+
+.fa-directions:before {
+    content: "\f5eb";
+}
+
+.fa-bars:before {
+    content: "\f0c9";
+}
+
+/* Basic icon styles */
+.fa {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa, .fas {
+    font-weight: 900 !important;
+}
+
+/* Icon colors */
+.text-success {
+    color: var(--bs-success) !important;
+}
+
+.text-danger {
+    color: var(--bs-danger) !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+/* Icon spacing */
+.me-2 {
+    margin-right: 0.5rem !important;
+}
+
+.me-3 {
+    margin-right: 1rem !important;
+} 

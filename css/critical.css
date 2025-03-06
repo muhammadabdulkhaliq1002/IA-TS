@@ -1,20 +1,95 @@
-/* Critical CSS for above-the-fold content */
+/* Critical CSS - Essential styles for initial page render */
 :root {
-    --primary-color: #0d6efd;
+    --primary-color: #007bff;
     --secondary-color: #6c757d;
-    --success-color: #198754;
-    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
     --warning-color: #ffc107;
-    --info-color: #0dcaf0;
+    --danger-color: #dc3545;
     --light-color: #f8f9fa;
-    --dark-color: #212529;
+    --dark-color: #343a40;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
     color: var(--dark-color);
-    padding-top: 76px;
+}
+
+.navbar {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Basic layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Basic section styles */
+section {
+    padding: 4rem 0;
+}
+
+/* Basic heading styles */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Basic link styles */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Navbar Styles */
@@ -22,11 +97,6 @@ body {
     background-color: var(--primary-color);
     padding: 0.5rem 0;
     transition: all 0.3s ease;
-}
-
-.navbar-brand {
-    color: white !important;
-    font-weight: bold;
 }
 
 .navbar-nav .nav-link {
